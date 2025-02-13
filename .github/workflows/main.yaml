@@ -3,7 +3,7 @@ name: Deploy to Surge
 on:
   push:
     branches:
-      - main  # Cambia esto si tu rama principal tiene otro nombre, como 'master'
+      - main  # O el nombre de tu rama principal
 
 jobs:
   deploy:
@@ -12,14 +12,6 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '16'  # O la versión de Node.js que estés utilizando
-
-    - name: Install dependencies
-      run: npm install
 
     - name: Deploy to Surge
       env:
